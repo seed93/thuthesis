@@ -1,0 +1,84 @@
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+\secretlevel{绝密} \secretyear{2100}
+
+\ctitle{人体三维姿态估计算法研究}
+% 根据自己的情况选，不用这样复杂
+\makeatletter
+\ifthu@bachelor\relax\else
+  \ifthu@doctor
+    \cdegree{工学博士}
+  \else
+    \ifthu@master
+      \cdegree{工学硕士}
+    \fi
+  \fi
+\fi
+\makeatother
+
+
+\cdepartment[自动化]{自动化系}
+\cmajor{自动化}
+\cauthor{梁鼎}
+\csupervisor{刘烨斌副研究员}
+% 如果没有副指导老师或者联合指导老师，把下面两行相应的删除即可。
+%\cassosupervisor{陈文光教授}
+%\ccosupervisor{某某某教授}
+% 日期自动生成，如果你要自己写就改这个cdate
+%\cdate{\CJKdigits{\the\year}年\CJKnumber{\the\month}月}
+
+% 博士后部分
+% \cfirstdiscipline{计算机科学与技术}
+% \cseconddiscipline{系统结构}
+% \postdoctordate{2009年7月——2011年7月}
+
+\etitle{3D Human Pose Estimation}
+% 这块比较复杂，需要分情况讨论：
+% 1. 学术型硕士
+%    \edegree：必须为Master of Arts或Master of Science（注意大小写）
+%              “哲学、文学、历史学、法学、教育学、艺术学门类，公共管理学科
+%               填写Master of Arts，其它填写Master of Science”
+%    \emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+% 2. 专业型硕士
+%    \edegree：“填写专业学位英文名称全称”
+%    \emajor：“工程硕士填写工程领域，其它专业学位不填写此项”
+% 3. 学术型博士
+%    \edegree：Doctor of Philosophy（注意大小写）
+%    \emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+% 4. 专业型博士
+%    \edegree：“填写专业学位英文名称全称”
+%    \emajor：不填写此项
+\edegree{Bachelor of Automation}
+\emajor{Automation}
+\eauthor{Ding Liang}
+\esupervisor{Associate Professor Yebin Liu}
+%\eassosupervisor{Chen Wenguang}
+% 这个日期也会自动生成，你要改么？
+% \edate{December, 2005}
+
+% 定义中英文摘要和关键字
+\begin{cabstract}
+
+人体姿态估计一直以来是计算机视觉研究领域的重点研究方向之一。人体姿态估计在体育运动分析、人机交互等领域有着广阔的应用前景和重大的应用价值。如今的研究主要集中于从单目图像中估计二维人体姿态信息，存在的问题有准确率低、无法完整刻画人体的运动姿态等。本文旨在通过从三幅不同角度拍摄的照片中估计出人体三维骨架信息。
+
+本文的创新点有：
+  \begin{itemize}
+    \item 提出了一种有效的背景分割算法。原有的分割算法会产生很多空洞及毛边，这在HoG描述特征中会产生很大噪声，本文提出了一种有效的图像分割方法，使人物能从背景中完整分离；
+    \item 提出了一种有效的HoG描述特征。原有的HoG特征维数过多，且会根据人物在图像中的尺寸改变每个元胞的大小，本文通过固定长宽比，保持了原有图像的信息；
+    \item 提出了一种有效的含有皮肤信息的特征。新增的皮肤信息对姿态识别有重要帮助。
+  \end{itemize}
+
+综上所述，本文提出了一种新的图像特征描述，该特征能有效地应用于人体三维姿态估计中，显著降低了估计误差。
+
+\end{cabstract}
+
+\ckeywords{三维， 姿态， 估计}
+
+\begin{eabstract}
+   
+\end{eabstract}
+
+\ekeywords{$3$D, pose, estimation}
