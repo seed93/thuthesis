@@ -23,6 +23,7 @@
 \usepackage{pdfpages}
 \usepackage{chapterbib}
 \usepackage{appendix}
+\usepackage{ifthen}
 
 %\usepackage{bibunits}
 
@@ -73,22 +74,30 @@
 \fi
 \makeatother
 
-
-% 参考文献
-\bibliographystyle{thubib}
-\bibliography{ref/refs}
+\newif\ifpdf
+\pdffalse
+\ifpdf
+\else
+    % 参考文献
+    \bibliographystyle{thubib}
+    \bibliography{ref/refs}
+\fi
 
 % 致谢
 \include{data/ack}
 
 % 附录
-%\begin{appendix}
-%\include{data/appendix01}
-%\end{appendix}
-\renewcommand{\appendixtocname}{附录A 外文翻译}
-\addappheadtotoc
-\includepdfset{pagecommand={\thispagestyle{thu@plain}}}
-\includepdf[pages=-]{data/ref.pdf}
+
+\ifpdf
+    \begin{appendix}
+    \include{data/appendix01}
+    \end{appendix}
+\else
+    \renewcommand{\appendixtocname}{附录A 外文资料翻译}
+    \addappheadtotoc
+    \includepdfset{pagecommand={\thispagestyle{thu@plain}}}
+    \includepdf[pages=-]{data/ref.pdf}
+\fi
 
 % 个人简历
 %\include{data/resume}

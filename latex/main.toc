@@ -47,8 +47,9 @@
 \contentsline {chapter}{插图索引}{7}{section*.16}
 \contentsline {chapter}{表格索引}{8}{section*.18}
 \contentsline {chapter}{公式索引}{9}{section*.20}
+\contentsline {chapter}{参考文献}{10}{section*.22}
 \gdef \the@ipfilectr {@-7}
-\contentsline {chapter}{致\hspace {1em}谢}{10}{section*.22}
-\contentsline {chapter}{声\hspace {1em}明}{11}{section*.24}
+\contentsline {chapter}{致\hspace {1em}谢}{11}{section*.24}
+\contentsline {chapter}{声\hspace {1em}明}{12}{section*.26}
 \gdef \the@ipfilectr {}
-\contentsline {chapter}{附录A 外文翻译}{12}{section*.26}
+\contentsline {chapter}{附录A 外文资料翻译}{13}{section*.28}

@@ -3,7 +3,8 @@
 %%% TeX-master: "../main"
 %%% End:
 
-\chapter{外文资料原文}
+\chapter{外文资料翻译}
+\pagestyle{empty}
 %\includepdfset{pagecommand={\thispagestyle{thu@plain}}}
 %\includepdf[pages=1-8]{data/FFDB.pdf} %标题
 \begin{center}
@@ -75,11 +76,11 @@ $^{3}$Adobe 系统\\
 \centering
     \subcaptionbox{面部标记}{
     \label{fig:face_marker}
-    \includegraphics[width=0.30\textwidth]{data/img/facemarker.pdf}}
+    \includegraphics[width=0.20\textwidth]{data/img/facemarker.pdf}}
     \hspace{5mm}
     \subcaptionbox{局部区域}{
     \label{fig:face_region}
-    \includegraphics[width=0.30\textwidth]{data/img/faceregion.pdf}}
+    \includegraphics[width=0.20\textwidth]{data/img/faceregion.pdf}}
     \caption{中性脸初始化 (a) 绿色是ASM的标记，红色是手工标记
     (b) 眼睛、嘴巴、鼻子区域分别用品红、蓝色、绿色标记。}
     \label{fig:face}
@@ -102,16 +103,16 @@ d_e(Q_e, T_e)&=& \alpha_{e}\sum_{i\in\text{eye}}\left\|F'_{Q_n \to Q_e,i} -F_{T_
 \centering
     \subcaptionbox{}{
     \label{fig:metric_driven}
-    \includegraphics[width=0.23\textwidth]{data/img/metric_likai_0380_00103.pdf}}
+    \includegraphics[width=0.2\textwidth]{data/img/metric_likai_0380_00103.pdf}}
     \subcaptionbox{}{
     \label{fig:metric_lbp}
-    \includegraphics[width=0.23\textwidth]{data/img/metric_lbp_00102.pdf}}
+    \includegraphics[width=0.2\textwidth]{data/img/metric_lbp_00102.pdf}}
     \subcaptionbox{}{
     \label{fig:metric_mag}
-    \includegraphics[width=0.23\textwidth]{data/img/metric_OFmag_00102.pdf}}
+    \includegraphics[width=0.2\textwidth]{data/img/metric_OFmag_00102.pdf}}
     \subcaptionbox{}{
     \label{fig:metric_magori}
-    \includegraphics[width=0.23\textwidth]{data/img/metric_OFmagori_00102.pdf}}
+    \includegraphics[width=0.2\textwidth]{data/img/metric_OFmagori_00102.pdf}}
     \caption{表情度量对比。 (a) 查询帧。 (b) 由LBP方法得到的最相似表情，它有一个不理想的皱眉。 (c) 由等式~\ref{eq:dist_mag}获得的最相似表情，有一个笑容而不是惊奇。 (d) 由等式~\ref{eq:dist_comb}获得的最相似表情，和查询帧匹配很好}
     \label{fig:metric}
 \end{figure}
@@ -289,5 +290,6 @@ $\gamma_e=0.9$， $\gamma_v=0.1$， $k=20$， $\lambda=0.1$， $\mu=1$， $\sigm
 \renewcommand{\refname} {参考文献}
 {\small
 \bibliographystyle{ieee}
+\pagestyle{empty}
 \bibliography{egbib}
 }
