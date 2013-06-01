@@ -21,9 +21,8 @@
 % 你可以在这里修改配置文件中的定义，导言区可以使用中文。
 % \def\myname{薛瑞尼}
 \usepackage{pdfpages}
-\usepackage{chapterbib}
+%\usepackage{chapterbib}
 \usepackage{appendix}
-\usepackage{ifthen}
 
 %\usepackage{bibunits}
 
@@ -40,7 +39,6 @@
 \frontmatter
 
 \input{data/cover}
-%\makecover
 \makecover%{thu-whole-logo.pdf}{thu-lib-logo.pdf}
 
 % 目录
@@ -90,7 +88,7 @@
 
 \ifpdf
     \begin{appendix}
-    \include{data/appendix01}
+    %\include{data/appendix01}
     \end{appendix}
 \else
     \renewcommand{\appendixtocname}{附录A 外文资料翻译}

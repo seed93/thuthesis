@@ -7,6 +7,9 @@ A level-1 auxiliary file: data/chap05.aux
 A level-1 auxiliary file: data/chap06.aux
 The style file: thubib.bst
 A level-1 auxiliary file: data/ack.aux
-I found no \citation commands---while reading file main.aux
 Database file #1: ref/refs.bib
-(There was 1 error message)
+Warning--there's a publisher but no address in wang2007semi
+Warning--empty institution in Poppe2007
+Warning--there's a publisher but no address in tian2012exploring
+Warning--there's a publisher but no address in agarwal2006local
+(There were 4 warnings)
