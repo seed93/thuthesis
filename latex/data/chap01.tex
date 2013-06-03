@@ -49,10 +49,10 @@ Wang等人~\cite{wang2013beyond}使用了一种隐含树模型，通过学习各
 其中(\ref{itm:3D})在多目估计中不存在，因此多目图像估计能够更好地克服遮挡等问题。
 
 \section{问题描述}
-本文将研究内容聚焦于人体三维姿态的估计，具体说来，输入与输出如下：
+本文将研究内容聚焦于人体三维姿态的估计，研究工作建立在Sminchisescu等人的双高斯过程~\cite{bo2010twin}工作基础之上，具体说来，输入与输出如下：
 \begin{description}
   \item[输入] 无标记的单目或多目静止图像（可以推广至图像序列）
-  \item[输出] 用关节点表示的三维人体骨架（关于骨架表示法将在\ref{sec:skeleton}阐述）
+  \item[输出] 用关节点表示的三维人体骨架（关于骨架表示法将在\ref{sec:skeleton}节阐述）
 \end{description}
 
 可以参照图\ref{fig:inout}。
