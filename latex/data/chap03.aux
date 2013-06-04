@@ -1,46 +1,83 @@
 \relax 
+\citation{ramanan2007learning}
+\citation{yang2011articulated}
+\citation{tian2012exploring}
+\citation{bo2008fast}
+\citation{eth_biwi_01027}
+\citation{Poppe2007}
 \@writefile{toc}{\contentsline {chapter}{\numberline {第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}提取特征}{11}{chapter.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}HoG特征}{11}{section.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}概述}{11}{subsection.3.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}提取步骤}{11}{subsection.3.1.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.1}分离背景}{11}{subsubsection.3.1.2.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.2}提取ROI(region of interest)}{11}{subsubsection.3.1.2.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.3}计算HoG描述子}{11}{subsubsection.3.1.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}皮肤特征}{11}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}特征表示}{11}{section.3.3}}
+\newlabel{chap:feature}{{三}{11}{提取特征\relax }{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}图片预处理}{11}{section.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces HumanEva背景\relax }}{11}{figure.caption.24}}
+\newlabel{fig:background}{{3.1}{11}{HumanEva背景\relax \relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}计算背景数据}{12}{subsection.3.1.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces HumanEva背景分割1\relax }}{12}{figure.caption.25}}
+\newlabel{fig:bk1}{{3.2}{12}{HumanEva背景分割1\relax \relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}局部优化}{12}{subsection.3.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces HumanEva背景分割2\relax }}{12}{figure.caption.26}}
+\newlabel{fig:bk2foot}{{3.3}{12}{HumanEva背景分割2\relax \relax }{figure.caption.26}{}}
+\citation{Poppe2007}
+\newlabel{fig:bk3small}{{3.4(a)}{13}{去掉小块背景\relax \relax }{figure.caption.27}{}}
+\newlabel{sub@fig:bk3small}{{(a)}{13}{去掉小块背景\relax \relax }{figure.caption.27}{}}
+\newlabel{fig:bk3far}{{3.4(b)}{13}{去掉偏远背景\relax \relax }{figure.caption.27}{}}
+\newlabel{sub@fig:bk3far}{{(b)}{13}{去掉偏远背景\relax \relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces HumanEva背景分割3\relax }}{13}{figure.caption.27}}
+\newlabel{fig:bk4dilate}{{3.5(a)}{13}{膨胀\relax \relax }{figure.caption.28}{}}
+\newlabel{sub@fig:bk4dilate}{{(a)}{13}{膨胀\relax \relax }{figure.caption.28}{}}
+\newlabel{fig:bk4erode}{{3.5(b)}{13}{腐蚀\relax \relax }{figure.caption.28}{}}
+\newlabel{sub@fig:bk4erode}{{(b)}{13}{腐蚀\relax \relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces HumanEva背景分割4\relax }}{13}{figure.caption.28}}
+\citation{Dalal05histogramsof}
+\newlabel{fig:bk_cmp_org}{{3.6(a)}{14}{Poppe等人分割结果\relax \relax }{figure.caption.29}{}}
+\newlabel{sub@fig:bk_cmp_org}{{(a)}{14}{Poppe等人分割结果\relax \relax }{figure.caption.29}{}}
+\newlabel{fig:bk_cmp_my}{{3.6(b)}{14}{本文结果\relax \relax }{figure.caption.29}{}}
+\newlabel{sub@fig:bk_cmp_my}{{(b)}{14}{本文结果\relax \relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces 背景分割对比\relax }}{14}{figure.caption.29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces 背景分割错误\relax }}{14}{figure.caption.30}}
+\newlabel{fig:bkerr}{{3.7}{14}{背景分割错误\relax \relax }{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}HOG特征}{15}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}概述}{15}{subsection.3.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}计算HOG描述子}{15}{subsection.3.2.2}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces MAX-HOG\relax }}{15}{algorithm.1}}
+\newlabel{alg:maxhog}{{1}{15}{MAX-HOG\relax \relax }{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}皮肤特征}{15}{section.3.3}}
+\new@pagectr{footnote}{1}{16}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces 皮肤检测\relax }}{16}{figure.caption.31}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}特征表示}{16}{section.3.4}}
+\newlabel{sec:feature}{{3.4}{16}{特征表示\relax }{section.3.4}{}}
 \@setckpt{data/chap03}{
-\setcounter{page}{12}
+\setcounter{page}{17}
 \setcounter{equation}{0}
-\setcounter{enumi}{7}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{0}
+\setcounter{footnote}{1}
 \setcounter{mpfootnote}{4}
 \setcounter{CTEX@sectiondepth}{2}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{3}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
-\setcounter{subsubsection}{3}
+\setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
+\setcounter{figure}{8}
 \setcounter{table}{0}
 \setcounter{parentequation}{0}
 \setcounter{ContinuedFloat}{0}
-\setcounter{subfigure}{3}
+\setcounter{subfigure}{2}
 \setcounter{subtable}{0}
 \setcounter{pp@next@reset}{0}
-\setcounter{endNonectr}{13}
+\setcounter{endNonectr}{19}
 \setcounter{currNonectr}{0}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{NAT@ctr}{0}
-\setcounter{Item}{7}
-\setcounter{Hfootnote}{4}
+\setcounter{Item}{11}
+\setcounter{Hfootnote}{5}
 \setcounter{bookmark@seq@number}{35}
-\setcounter{pcabs@footnote}{0}
+\setcounter{pcabs@footnote}{1}
 \setcounter{thu@bookmark}{4}
 \setcounter{currproofctr}{0}
 \setcounter{endproofctr}{0}
@@ -81,10 +118,15 @@
 \setcounter{currconjecturectr}{0}
 \setcounter{endconjecturectr}{0}
 \setcounter{conjecture}{0}
-\setcounter{float@type}{4}
+\setcounter{float@type}{8}
 \setcounter{AM@survey}{0}
 \setcounter{@pps}{0}
 \setcounter{@ppsavesec}{0}
 \setcounter{@ppsaveapp}{0}
+\setcounter{algorithm}{1}
+\setcounter{ALC@unique}{4}
+\setcounter{ALC@line}{4}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
 \setcounter{section@level}{1}
 }

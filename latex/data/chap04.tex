@@ -1,8 +1,113 @@
 
 
 \chapter{基于双高斯过程的姿态估计算法}
+
 \section{概述}
+由第\ref{sec:feature}节和第\ref{sec:skeleton}节可知，本文研究问题的输入输出已经刻画成两个一维向量，记输入向量（特征向量）为$\mathbf{R}$,，输出向量（骨架向量）为$\mathbf{X}$，则$\mathbf{X}=\textrm{F}(\mathbf{R})$，可以归结为一个多输出多元回归问题。显然，输出向量的每个元素之间是有关联的，用若干简单的回归方法（如线性回归、SVM等方法）独立预测各元素是不合理的。此外，我们知道相似的特征应该表示相似的人体骨架，因此，自然想到了 KNN（\emph{k} nearest neighbor regression）算法，但该算法效果并不理想，因此本文采用了一种能更好描述向量之间相关性的算法\pozhehao 双高斯过程回归（Twin Gaussian Process Regression，以下简称TGP）。在介绍该算法前，首先有必要介绍其前身和基础\pozhehao 高斯过程回归（Gaussian Process Regression，以下简称GPR）。
 
 \section{高斯过程回归}
+高斯过程回归是基于贝叶斯理论和统计学习理论发展起来的一种机器学习方法, 对于高维数、小样本和非线性等复杂回归问题行之有效。
+记输入向量为$\mathbf{R}=(\mathbf{r}_1,\mathbf{r}_2,...,\mathbf{r}_N)$，$dim(\mathbf{r}_i)=W$，对应的输出向量为$\mathbf{X}=(\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_N)$，$dim(\mathbf{x}_i)=D$，N为样例的个数。简单来说，GPR就是假定输入向量的协方差满足高斯分布。先定义$f(\mathbf{r})$ 是输入$\mathbf{r}$的一个函数，用公式\ref{eqn:GPRcov}表示输入向量的协方差，协方差函数可以有多种取法，公式\ref{eqn:GPRguassian}即为一种取法。
+  \begin{equation}
+  \textmd{cov}\left(f(\mathbf{r}_i),f(\mathbf{r}_j)\right) = K_R\left(\mathbf{r}_i,\mathbf{r}_j\right)\label{eqn:GPRcov}
+  \end{equation}
+  \begin{equation}
+    K_R\left(\mathbf{r}_i,\mathbf{r}_j\right)= \textmd{exp}\left(-\gamma_r||\mathbf{r}_i-\mathbf{r}_j||^2\right)+\lambda_r\delta_{ij}\label{eqn:GPRguassian}
+  \end{equation}
+其中$\lambda_r$用来描述噪声，
+\begin{equation}
+  \delta_{ij}=\begin{cases}1,\hspace{1cm}i=j \\ 0,\hspace{1cm}i\neq j  \end{cases}
+\end{equation}
+又因为$\mathbf{X}=\textrm{F}(\mathbf{R})$，所以有公式\ref{eqn:GPRguassian2}
+\begin{equation}\label{eqn:GPRguassian2}
+  \begin{bmatrix} {(\mathbf{X}^{(d)})}^\top \\ \mathbf{x}^{(d)} \end{bmatrix}
+  \sim \mathcal{N}_R
+  \begin{pmatrix}
+    \mathbf{0},& \begin{bmatrix} \mathbf{K}_R & \mathbf{K}_R^r \\ {\left(\mathbf{K}_R^r\right)}^\top & K_R(\mathbf{r},\mathbf{r}) \end{bmatrix}
+  \end{pmatrix}
+\end{equation}
 
-\section{双高斯过程}
+其中$\mathbf{X}^{(d)}$是$\mathbf{X}$的第\emph{d}列，$\mathbf{x}^{(d)}$是$\mathbf{x}$的第\emph{d}个元素；$\mathbf{K}_R$是$N\times N$矩阵，$(\mathbf{K}_R)_{ij}=K_R(\mathbf{r}_i,\mathbf{r}_j)$；$\mathbf{K}_R^r$是$N\times 1$的向量，$\left(\mathbf{K}_R^r\right)_{ij}=K_R(\mathbf{r}_i,\mathbf{r})$，用来描述输入向量的相关性；$K_R(\mathbf{r},\mathbf{r})$是$\mathbf{r}$自身的协方差。
+
+用$\mathbf{X}^{(d)}$表示观测数据，$\mathbf{x}^{(d)}$表示预测数据，因为二者联合分布符合高斯分布，因此后验概率$p(\mathbf{x}^{(d)}|(\mathbf{X}^{(d)})^\top)$ 也满足高斯分布，均值和方差分别见公式\ref{eqn:GPRmean}、\ref{eqn:GPRvar}，即可用均值表示输入$\mathbf{r}$的预测结果。
+\begin{equation}\label{eqn:GPRmean}
+  \textmd{mean}\left(\mathbf{x}^{(d)}\right) = \mathbf{X}^{(d)} \mathbf{K}_R^{-1} \mathbf{K}_R^r
+\end{equation}
+\begin{equation}\label{eqn:GPRvar}
+\sigma^2\left(\mathbf{x}^{(d)}\right) = K_R\left(\mathbf{r},\mathbf{r}\right) - {\left(\mathbf{K}_R^r\right)}^\top \mathbf{K}_R^{-1} \mathbf{K}_R^r\
+\end{equation}
+
+以上阐述了如何利用GPR进行预测，关于GPR的参数如何学习计算，可以采用共轭梯度法、牛顿法等优化方法求得参数的最优解，本文不再详述。
+
+由于GPR只关心单个输出的预测，没有考虑每个输出之间的关系，而且对于从二维平面恢复三维姿态这样一个多解问题GPR显得无能为力，因此本文采用了双高斯过程回归，将在\ref{sec:TGP} 节介绍。
+
+\section{双高斯过程回归}
+\label{sec:TGP}
+\subsection{概述}
+为了考虑各输出变量之间的相关性，借鉴GPR的思路，我们假定输出变量之间也符合关于输出的高斯分布：
+\begin{equation}
+  \begin{bmatrix} {\left(\mathbf{X}^{(d)}\right)}^\top \\ \mathbf{x}^{(d)} \end{bmatrix} \sim \mathcal{N}_X\left(\mathbf{0},\mathbf{K}_{\mathbf{X}\bigcup \mathbf{x}}\right)
+\end{equation}
+
+其中相关性矩阵为：
+\begin{equation}
+  \mathbf{K}_{\mathbf{X}\bigcup \mathbf{x}} = \begin{bmatrix} {\left(\mathbf{X}^{(d)}\right)}^\top \mathbf{X}^{(d)} & {\left(\mathbf{X}^{(d)}\right)}^\top \mathbf{x}^{(d)}
+\\ \mathbf{X}^{(d)} \mathbf{x}^{(d)} & \mathbf{x}^{(d)} \mathbf{x}^{(d)}
+ \end{bmatrix}
+\end{equation}
+
+于是$\begin{bmatrix} {\left(\mathbf{X}^{(d)}\right)}^\top \\ \mathbf{x}^{(d)} \end{bmatrix}$服从$\mathcal{N}_X$和$\mathcal{N}_R$两个正态分布。我们希望这两个分布尽量一致，$\mathcal{N}_X$ 的参数是需要估计的，通过优化调整$\mathbf{x}^{(d)}$使两个分布尽量接近。
+
+\subsection{KL散度}
+为了刻画相同事件空间里的两个概率分布的相似度，在此引入KL散度（Kullback-Leibler Divergence），其物理意义是：在相同事件空间里，概率分布$P(x)$ 的事件空间，若用概率分布$Q(x)$ 编码时，平均每个基本事件（符号）编码长度增加了多少比特\footnote{url:\url{http://en.wikipedia.org/wiki/Kullback-Leibler_divergence}}。 计算公式为：
+\begin{equation}
+  D(P||Q)=\sum P(x)\log \frac{P(x)}{Q(x)}
+\end{equation}
+
+具体在这里$\mathcal{N}_X$和$\mathcal{N}_R$的KL散度可表示为：
+\begin{align}
+ D_{KL}(N_X||N_R) &= -\frac{N}{2}-\frac{1}{2}\log|\mathbf{K}_{\mathbf{X}\bigcup \mathbf{x}}| \notag\\
+                  &+ \frac{1}{2}\textmd{Tr} \begin{Bmatrix} \mathbf{K}_{\mathbf{X}\bigcup \mathbf{x}} \begin{bmatrix} \mathbf{K}_R & \mathbf{K}_R^r \notag\\ {\left(\mathbf{K}_R^r\right)}^\top & K_R(\mathbf{r},\mathbf{r}) \end{bmatrix} ^{-1} \end{Bmatrix}\\
+                  &+ \frac{1}{2}\log \begin{vmatrix}\begin{bmatrix} \mathbf{K}_R & \mathbf{K}_R^r \\ {\left(\mathbf{K}_R^r\right)}^\top & K_R(\mathbf{r},\mathbf{r}) \end{bmatrix}\end{vmatrix}\label{eqn:KLorg}
+\end{align}
+
+于是预测三维姿态$\mathbf{x}$转化成一个优化问题：
+\begin{equation}
+  \mathbf{x}^\ast  = \underset{\mathbf{x}^{(d)}}{\textmd{argmin}} \left[L\left(\mathbf{x}^{(d)}\right)\equiv D_{KL}(N_X||N_R)\right]
+\end{equation}
+
+其中Tr表示求矩阵的迹。
+\subsection{求解优化问题}
+通过去掉公式\ref{eqn:KLorg}中和$\mathbf{x}$的无关项，加以简化可以得到式\ref{eqn:KL1}
+\begin{align}
+ L\left(\mathbf{x}^{(d)}\right) &= \mathbf{x}^{(d)}\mathbf{x}^{(d)}-2\mathbf{x}^{(d)} \mathbf{X}^{(d)} \mathbf{K}_R^{-1} \mathbf{K}_R^r \notag\\
+               &- \left[K_R(\mathbf{r},\mathbf{r}) - \left(\mathbf{K}_R^r\right)^\top \mathbf{K}_R^{-1} \mathbf{K}_R^r\right] \notag\\
+               &\times \log\left\{\mathbf{x}^{(d)}\mathbf{x}^{(d)} - \mathbf{x}^{(d)}\mathbf{X}^{(d)} \left[{\left(\mathbf{X}^{(d)}\right)}^\top \mathbf{X}^{(d)}\right]^{-1} {\left(\mathbf{X}^{(d)}\right)}^\top \mathbf{X}^{(d)} \right\}\label{eqn:KL1}
+ \end{align}
+
+ 如果预测三维姿态变量各维之间是独立的，那么可以写成公式\ref{eqn:KL2}
+ \begin{align}
+ L(\mathbf{x}) &= \mathbf{x}^\top\mathbf{x}-2\mathbf{x}^\top \mathbf{X} \mathbf{K}_R^{-1} \mathbf{K}_R^r \notag\\
+               &- \left[K_R(\mathbf{r},\mathbf{r}) - \left(\mathbf{K}_R^r\right)^\top \mathbf{K}_R^{-1} \mathbf{K}_R^r\right] \notag\\
+               &\times \log\left[\mathbf{x}^\top\mathbf{x} - \mathbf{x}^\top\mathbf{X}
+               \left({\mathbf{X}}^\top \mathbf{X}\right)^{-1} {\mathbf{X}}^\top \mathbf{X}\right]\label{eqn:KL2}
+ \end{align}
+
+然而显然变量各维之间是不独立的，因此同对待输入变量一样，我们为输出变量各维之间也定义相关函数：
+\begin{equation}
+  \textmd{cov}\left(f(\mathbf{x}_i),f(\mathbf{x}_j)\right) = K_R\left(\mathbf{x}_i,\mathbf{x}_j\right)\label{eqn:TGPcov}
+\end{equation}
+
+同样相关函数也可以选择和公式\ref{eqn:GPRguassian}类似的高斯函数。于是我们把输出变量的相关矩阵表示为式\ref{eqn:TGPcov2}
+\begin{equation}
+    \mathbf{K}_{\mathbf{X}\bigcup \mathbf{x}} = \begin{bmatrix} \mathbf{K}_X & \mathbf{K}_X^x \\ {\left(\mathbf{K}_X^x\right)}^\top & K_X\left(\mathbf{x},\mathbf{x}\right) \end{bmatrix}\label{eqn:TGPcov2}
+\end{equation}
+
+于是最终优化问题变为式\ref{eqn:TPGopt}
+\begin{align}
+ L(\textbf{x}) &= K_X\left(\textbf{x},\textbf{x}\right)-2\left(\textbf{K}_X^x\right)^\top \textbf{K}_R^{-1} \textbf{K}_R^r \notag\\
+               &- \left[K_R(\textbf{r},\textbf{r}) - \left(\textbf{K}_R^r\right)^\top \textbf{K}_R^{-1} \textbf{K}_R^r\right] \log\left[K_X(\textbf{x},\textbf{x}) - \left(\textbf{K}_X^x\right)^\top \textbf{K}_X^{-1} \textbf{K}_X^x\right] \label{eqn:TPGopt}
+ \end{align}
+ 
+通过求取梯度，令梯度为0，即可求得最优解。
+    
