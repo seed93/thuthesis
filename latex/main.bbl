@@ -1,0 +1,240 @@
+\begin{thebibliography}{10}
+
+\bibitem{wang2007semi}
+Wang Y, Sabzmeydani P, Mori G.
+\newblock Semi-latent dirichlet allocation: A hierarchical model for human
+  action recognition.
+\newblock Proceedings of Human Motion--Understanding, Modeling, Capture and
+  Animation. Springer, 2007: 240--254
+\thudot
+
+\bibitem{wei2009modeling}
+Wei X~K, Chai J.
+\newblock Modeling 3d human poses from uncalibrated monocular images.
+\newblock Proceedings of Computer Vision, 2009 IEEE 12th International
+  Conference on. IEEE, 2009.
+\newblock  1873--1880
+\thudot
+
+\bibitem{wei2010videomocap}
+Wei X, Chai J.
+\newblock Videomocap: modeling physically realistic human motion from monocular
+  video sequences.
+\newblock ACM Transactions on Graphics (TOG), 2010, 29(4):42
+\thudot
+
+\bibitem{bo2008fast}
+Bo L, Sminchisescu C, Kanaujia A, et~al.
+\newblock Fast algorithms for large scale conditional 3D prediction.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2008
+  IEEE Computer Society Conference on. IEEE, 2008.
+\newblock  1--8
+\thudot
+
+\bibitem{burenius20133d}
+Burenius M, Sullivan J, Carlsson S.
+\newblock 3D Pictorial Structures for Multiple View Articulated Pose
+  Estimation.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2013
+  IEEE Computer Society Conference on. IEEE, 2013
+\thudot
+
+\bibitem{bo2010twin}
+Bo L, Sminchisescu C.
+\newblock Twin gaussian processes for structured prediction.
+\newblock International Journal of Computer Vision, 2010, 87(1-2):28--52
+\thudot
+
+\bibitem{Poppe2007}
+Poppe R.
+\newblock Evaluating Example-based Pose Estimation: Experiments on the HumanEva
+  Sets.
+\newblock Technical Report TR-CTIT-07-72, Enschede, 2007
+\thudot
+
+\bibitem{agarwal2006recovering}
+Agarwal A, Triggs B.
+\newblock Recovering 3D human pose from monocular images.
+\newblock Pattern Analysis and Machine Intelligence, IEEE Transactions on,
+  2006, 28(1):44--58
+\thudot
+
+\bibitem{gkiox2013ariarticulated}
+Gkioxari G, Arbel{\'a}ez P, Bourdev L, et~al.
+\newblock Articulated Pose Estimation using Discriminative Armlet Classifiers.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2013
+  IEEE Computer Society Conference on. IEEE, 2013
+\thudot
+
+\bibitem{felzenszwalb2005pictorial}
+Felzenszwalb P~F, Huttenlocher D~P.
+\newblock Pictorial structures for object recognition.
+\newblock International Journal of Computer Vision, 2005, 61(1):55--79
+\thudot
+
+\bibitem{ferrari2008progressive}
+Ferrari V, Marin-Jimenez M, Zisserman A.
+\newblock Progressive search space reduction for human pose estimation.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2008
+  IEEE Computer Society Conference on. IEEE, 2008.
+\newblock  1--8
+\thudot
+
+\bibitem{ramanan2007learning}
+Ramanan D.
+\newblock Learning to parse images of articulated bodies.
+\newblock Advances in neural information processing systems, 2007, 19:1129
+\thudot
+
+\bibitem{andriluka2009pictorial}
+Andriluka M, Roth S, Schiele B.
+\newblock Pictorial structures revisited: People detection and articulated pose
+  estimation.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2013
+  IEEE Computer Society Conference on. IEEE, 2009.
+\newblock  1014--1021
+\thudot
+
+\bibitem{yang2011articulated}
+Yang Y, Ramanan D.
+\newblock Articulated pose estimation with flexible mixtures-of-parts.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2011
+  IEEE Computer Society Conference on. IEEE, 2011.
+\newblock  1385--1392
+\thudot
+
+\bibitem{wang2013beyond}
+Wang F, Li Y.
+\newblock Beyond Physical Connections: Tree Models in Human Pose Estimation.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2013
+  IEEE Computer Society Conference on. IEEE, 2013
+\thudot
+
+\bibitem{Johnson10LSP}
+Johnson S, Everingham M.
+\newblock Clustered Pose and Nonlinear Appearance Models for Human Pose
+  Estimation.
+\newblock Proceedings of Proceedings of the British Machine Vision Conference,
+  2010.
+\newblock doi:10.5244/C.24.12
+\thudot
+
+\bibitem{tian2012exploring}
+Tian Y, Zitnick C~L, Narasimhan S~G.
+\newblock Exploring the spatial hierarchy of mixture models for human pose
+  estimation.
+\newblock Proceedings of Computer Vision--ECCV 2012. Springer, 2012: 256--269
+\thudot
+
+\bibitem{agarwal2006local}
+Agarwal A, Triggs B.
+\newblock A local basis representation for estimating human pose from cluttered
+  images.
+\newblock Proceedings of Computer Vision--ACCV 2006. Springer, 2006: 50--59
+\thudot
+
+\bibitem{rosales2002learning}
+Rosales R, Sclaroff S.
+\newblock Learning body pose via specialized maps.
+\newblock Advances in neural information processing systems, 2002. 227--229
+\thudot
+
+\bibitem{shakhnarovich2003fast}
+Shakhnarovich G, Viola P, Darrell T.
+\newblock Fast pose estimation with parameter-sensitive hashing.
+\newblock Proceedings of Computer Vision, 2003. Proceedings. Ninth IEEE
+  International Conference on. IEEE, 2003.
+\newblock  750--757
+\thudot
+
+\bibitem{sminchisescu2005discriminative}
+Sminchisescu C, Kanaujia A, Li Z, et~al.
+\newblock Discriminative density propagation for 3d human motion estimation.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2005
+  IEEE Computer Society Conference on, volume~1. IEEE, 2005.
+\newblock  390--397
+\thudot
+
+\bibitem{bo2009SSLVM}
+Bo L, Sminchisescu C.
+\newblock {Supervised Spectral Latent Variable Models}.
+\newblock Proceedings of Artificial Intelligence and Statistics, 2009
+\thudot
+
+\bibitem{sigal2006humaneva}
+Sigal L, Black M~J.
+\newblock Humaneva: Synchronized video and motion capture dataset for
+  evaluation of articulated human motion.
+\newblock Technical Report CS-06-08, 2006
+\thudot
+
+\bibitem{agarwal20043d}
+Agarwal A, Triggs B.
+\newblock 3D human pose from silhouettes by relevance vector regression.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2004
+  IEEE Computer Society Conference on, volume~2. IEEE, 2004.
+\newblock  II--882
+\thudot
+
+\bibitem{pons2010multisensor}
+Pons-Moll G, Baak A, Helten T, et~al.
+\newblock Multisensor-fusion for 3d full-body human motion capture.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2010
+  IEEE Computer Society Conference on. IEEE, 2010.
+\newblock  663--670
+\thudot
+
+\bibitem{eth_biwi_00661}
+Eichner M, Ferrari V.
+\newblock Better Appearance Models for Pictorial Structures.
+\newblock Proceedings of British Machine Vision Conference, 2009
+\thudot
+
+\bibitem{tran2010improved}
+Tran D, Forsyth D.
+\newblock Improved human parsing with a full relational model.
+\newblock Proceedings of Computer Vision--ECCV 2010. Springer, 2010: 227--240
+\thudot
+
+\bibitem{yao2010modeling}
+Yao B, Fei-Fei L.
+\newblock Modeling mutual context of object and human pose in human-object
+  interaction activities.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2010
+  IEEE Computer Society Conference on. IEEE, 2010.
+\newblock  17--24
+\thudot
+
+\bibitem{ganapathi2010real}
+Ganapathi V, Plagemann C, Koller D, et~al.
+\newblock Real time motion capture using a single time-of-flight camera.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2010
+  IEEE Computer Society Conference on. IEEE, 2010.
+\newblock  755--762
+\thudot
+
+\bibitem{wang2006modular}
+Wang P, Rehg J~M.
+\newblock A modular approach to the analysis and evaluation of particle filters
+  for figure tracking.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2006
+  IEEE Computer Society Conference on, volume~1. IEEE, 2006.
+\newblock  790--797
+\thudot
+
+\bibitem{eth_biwi_01027}
+Dantone M, Gall J, Leistner C, et~al.
+\newblock Human Pose Estimation using Body Parts Dependent Joint Regressors.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2013
+  IEEE Computer Society Conference on, 2013
+\thudot
+
+\bibitem{Dalal05histogramsof}
+Dalal N, Triggs B.
+\newblock Histograms of Oriented Gradients for Human Detection.
+\newblock Proceedings of Computer Vision and Pattern Recognition (CVPR), 2005
+  IEEE Computer Society Conference on, 2005.
+\newblock  886--893
+\thudot
+
+\end{thebibliography}

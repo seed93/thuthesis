@@ -23,24 +23,25 @@
 \contentsline {section}{\numberline {3.1}图片预处理}{11}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}计算背景数据}{12}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}局部优化}{12}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}HOG特征}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}概述}{15}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}计算HOG描述子}{15}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}皮肤特征}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}特征表示}{16}{section.3.4}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}基于双高斯过程的姿态估计算法}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}概述}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}高斯过程回归}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}双高斯过程回归}{18}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}概述}{18}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}KL散度}{19}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}求解优化问题}{19}{subsection.4.3.3}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}结果分析与比较}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}运行环境}{21}{section.5.1}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 6\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}总结与展望}{22}{chapter.6}
-\contentsline {chapter}{插图索引}{23}{section*.36}
-\contentsline {chapter}{表格索引}{24}{section*.38}
-\contentsline {chapter}{公式索引}{25}{section*.40}
-\contentsline {chapter}{致\hspace {1em}谢}{26}{section*.42}
-\contentsline {chapter}{声\hspace {1em}明}{27}{section*.44}
-\contentsline {chapter}{附录A 外文资料翻译}{28}{section*.46}
+\contentsline {section}{\numberline {3.2}HOG特征}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}概述}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}计算HOG描述子}{16}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}皮肤特征}{19}{section.3.3}
+\contentsline {section}{\numberline {3.4}特征表示}{19}{section.3.4}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}基于双高斯过程的姿态估计算法}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}概述}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}高斯过程回归}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}双高斯过程回归}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}概述}{21}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}KL散度}{22}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}求解优化问题}{22}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}结果分析与比较}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}运行环境}{24}{section.5.1}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 6\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}总结与展望}{25}{chapter.6}
+\contentsline {chapter}{插图索引}{26}{section*.39}
+\contentsline {chapter}{表格索引}{27}{section*.41}
+\contentsline {chapter}{公式索引}{28}{section*.43}
+\contentsline {chapter}{参考文献}{29}{section*.45}
+\contentsline {chapter}{致\hspace {1em}谢}{32}{section*.47}
+\contentsline {chapter}{声\hspace {1em}明}{33}{section*.49}
+\contentsline {chapter}{附录A 外文资料翻译}{34}{section*.51}
