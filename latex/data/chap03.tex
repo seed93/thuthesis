@@ -17,7 +17,7 @@
 给出的背景不是单张图片，而是一段视频，因此可利用的信息更多。本文假定视频中的$N$帧图像每个像素点都满足高斯分布，记像素点$\mathbf{c}=(r,g,b)$，则$\mathbf{c}\sim \mathcal{N}(\mu,\sigma)$，通过统计所有视频帧可以算出$\mu$和$\sigma$，用待分割图片中的每一个像素点代入高斯分布，即可算出该点是否为背景的概率。给定一个阈值，即可产生一个粗糙的二值图分割，见图\ref{fig:bk1}。
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{原图}{\includegraphics[width=0.45\textwidth]{bkimage}\hspace{.5cm}}
+  \subcaptionbox{原图}{\includegraphics[width=0.45\textwidth]{bkimage}}\hspace{.5cm}
   \subcaptionbox{背景概率分割}{\includegraphics[width=0.45\textwidth]{bk1}}
   \caption{HumanEva背景分割1}\label{fig:bk1}
 \end{figure}
@@ -27,7 +27,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{}{\includegraphics[height=5.5cm]{bkfar}\hspace{1cm}}
+  \subcaptionbox{}{\includegraphics[height=5.5cm]{bkfar}}\hspace{1cm}
   \subcaptionbox{}{\includegraphics[height=5.5cm]{bkfarcut}}
   \caption{HumanEva背景分割2}\label{fig:bkfar}
 \end{figure}
@@ -36,11 +36,11 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{原图}{\includegraphics[width=0.4\textwidth]{bkfootorg}\hspace{1cm}}
-  \subcaptionbox{背景}{\includegraphics[width=0.4\textwidth]{bkfootbk}}\\
-  \subcaptionbox{原图HSV}{\includegraphics[width=0.4\textwidth]{bkfootorghsv}\hspace{1cm}}
-  \subcaptionbox{背景HSV}{\includegraphics[width=0.4\textwidth]{bkfootbkhsv}}\\
-  \subcaptionbox{做差}{\includegraphics[width=0.4\textwidth]{bkfootdiff}}\\
+  \subcaptionbox{原图}{\includegraphics[width=0.3\textwidth]{bkfootorg}}\hspace{.5cm}
+  \subcaptionbox{背景}{\includegraphics[width=0.3\textwidth]{bkfootbk}}\\
+  \subcaptionbox{原图HSV}{\includegraphics[width=0.3\textwidth]{bkfootorghsv}}\hspace{.5cm}
+  \subcaptionbox{背景HSV}{\includegraphics[width=0.3\textwidth]{bkfootbkhsv}}\\
+  \subcaptionbox{做差}{\includegraphics[width=0.3\textwidth]{bkfootdiff}}\\
   \caption{去除阴影}
 \end{figure}
 
@@ -48,7 +48,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{去除阴影\label{fig:bk2foot}}{\includegraphics[height=5.5cm]{bkshadowrem}\hspace{1cm}}
+  \subcaptionbox{去除阴影\label{fig:bk2foot}}{\includegraphics[height=5.5cm]{bkshadowrem}}\hspace{1cm}
   \subcaptionbox{去掉小块背景\label{fig:bk3small}}{\includegraphics[height=5.5cm]{bksmall1}}
   \caption{HumanEva背景分割3}
 \end{figure}
@@ -57,7 +57,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{膨胀\label{fig:bk4dilate}}{\includegraphics[height=5.5cm]{bkdilate}\hspace{1cm}}
+  \subcaptionbox{膨胀\label{fig:bk4dilate}}{\includegraphics[height=5.5cm]{bkdilate}}\hspace{1cm}
   \subcaptionbox{腐蚀\label{fig:bk4erode}}{\includegraphics[height=5.5cm]{bkerode}}
   \caption{HumanEva背景分割4}
 \end{figure}
@@ -66,13 +66,13 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{Poppe等人分割结果\label{fig:bk_cmp_org}}{\includegraphics[height=5.5cm]{bk_cmp_org}\hspace{1cm}}
-  \subcaptionbox{本文结果1\label{fig:bk_cmp_my}}{\includegraphics[height=5.5cm]{bk_cmp_my}\hspace{1cm}}
+  \subcaptionbox{Poppe等人分割结果\label{fig:bk_cmp_org}}{\includegraphics[height=5.5cm]{bk_cmp_org}}\hspace{1cm}
+  \subcaptionbox{本文结果1\label{fig:bk_cmp_my}}{\includegraphics[height=5.5cm]{bk_cmp_my}}\hspace{1cm}
   \subcaptionbox{本文结果2\label{fig:bk_cmp_my2}}{\includegraphics[height=5.5cm]{bk_final}}
   \caption{背景分割对比}
 \end{figure}
 
-此外，在处理演员2的时候由于衣服颜色和背景过于相像，出现了图\ref{fig:bkerr} 所示的错误（上身部分缺失），针对这种特殊情况，先找到前景所占矩形区域，然后填充矩形区域中上部60\% 范围内的空洞。这一操作虽然不至于填充两腿缝隙，但对于胳膊与腰造成的空洞也会一并填充，鉴于这种情况出现的帧数极少，故忽略此问题。
+此外，在处理演员2的时候由于衣服颜色和背景过于相像，出现了图\ref{fig:bkerr} 所示的错误（上身部分缺失），针对这种特殊情况，先找到前景所占矩形区域，然后填充矩形区域中上部60\%范围内的空洞。这一操作虽然不至于填充两腿缝隙，但对于胳膊与腰造成的空洞也会一并填充，鉴于这种情况出现的帧数极少，故忽略此问题。
 
 \begin{figure}[htbp]
   \centering
@@ -132,26 +132,39 @@ HOG特征的提取方法主要步骤如下：
   \end{algorithmic}
 \end{algorithm}
 
-此处需要强调一下，Poppe等人对于区域数量的选取是$5\times 6=30$，由于每张图片人物大小不一、长宽比例不固定，因此每个子区域的长宽比也不固定，这会导致一些问题，比如在不同长宽比的图片中，头部在细长的图片中会出现在多个子区域中，而较宽的图片中则只有一个区域有头部，图片本身的比例信息已经丢失，为了解决这个问题，本文在求取HOG特征之前先将图片填充到3:2 的比例，这样求取的特征就不会变形，虽然有较多区域是无用信息，占用了维数，但是经过测试，这并不会增加额外的存储占用，因为数据本身是稀疏的。
+此处需要强调一下，Poppe等人对于区域数量的选取是$5\times 6=30$，由于每张图片人物大小不一、长宽比例不固定，因此每个子区域的长宽比也不固定，这会导致一些问题，比如在不同长宽比的图片中，头部在细长的图片中会出现在多个子区域中，而较宽的图片中则只有一个区域有头部，图片本身的比例信息已经丢失，见图\ref{fig:broadthin}。为了解决这个问题，本文在求取HOG特征之前先将图片填充到3:2 的比例（见图）\ref{fig:broadthin2}，这样求取的特征就不会变形，虽然有较多区域是无用信息，占用了维数，但是经过测试，这并不会增加额外的存储占用，因为数据本身是稀疏的。
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{较宽图片}{\includegraphics[height=5.5cm]{broad}}\hspace{.5cm}
+  \subcaptionbox{较窄图片}{\includegraphics[height=5.5cm]{thin}}
+  \caption{图片比例影响示意}\label{fig:broadthin}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{}{\includegraphics[height=5.5cm]{broad1}}\hspace{.5cm}
+  \subcaptionbox{}{\includegraphics[height=5.5cm]{thin1}}
+  \caption{图片固定比例示意}\label{fig:broadthin2}
+\end{figure}
 
 每个像素点根据周围像素信息都可以算得一个梯度信息，包括梯度的方向和大小。计算直方图指的是对于每一个子区域，对梯度的方向做直方图，方向范围是$0^\circ\thicksim180^\circ$，将直方图分为9块，每块含$20^\circ$，对在该角度范围的梯度的大小求和作为直方图中这一块的值。子区域的直方图统计可以用图\ref{fig:local_hoG}来表示，每一个方向用该方向上的矩形表示，颜色越亮表示梯度越大。最后做L1 规范化，得到最终的HOG 特征向量。
 %这还有加一些图
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{完整原图}{\includegraphics[height=5.5cm]{C1}\hspace{.5cm}}
-  \subcaptionbox{右手腕局部}{\includegraphics[width=0.15\textwidth]{local_org}\hspace{.5cm}}
+  \subcaptionbox{完整原图}{\includegraphics[height=5.5cm]{C1}}\hspace{.5cm}
+  \subcaptionbox{右手腕局部}{\includegraphics[width=0.15\textwidth]{local_org}}\hspace{.5cm}
   \subcaptionbox{单个区域直方图\label{fig:local_hoG}}{\includegraphics[width=0.15\textwidth]{local_HoG}}
   \caption{HOG特征子区域直方图表示}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{C1}{\includegraphics[width=0.2\textwidth]{C1}\hspace{.5cm}}
-  \subcaptionbox{C2}{\includegraphics[width=0.2\textwidth]{C2}\hspace{.5cm}}
+  \subcaptionbox{C1}{\includegraphics[width=0.2\textwidth]{C1}}\hspace{.5cm}
+  \subcaptionbox{C2}{\includegraphics[width=0.2\textwidth]{C2}}\hspace{.5cm}
   \subcaptionbox{C3}{\includegraphics[width=0.2\textwidth]{C3}}\\
-  \subcaptionbox{HOG1}{\includegraphics[width=0.2\textwidth]{HOG1}\hspace{.5cm}}
-  \subcaptionbox{HOG2}{\includegraphics[width=0.2\textwidth]{HOG2}\hspace{.5cm}}
-  \subcaptionbox{HOG2}{\includegraphics[width=0.2\textwidth]{HOG3}}
+  \subcaptionbox{HOG1}{\includegraphics[width=0.2\textwidth]{HOG1}}\hspace{.5cm}
+  \subcaptionbox{HOG2}{\includegraphics[width=0.2\textwidth]{HOG2}}\hspace{.5cm}
+  \subcaptionbox{HOG3}{\includegraphics[width=0.2\textwidth]{HOG3}}
   \caption{HOG特征}
 \end{figure}
 
@@ -159,7 +172,7 @@ HOG特征的提取方法主要步骤如下：
 由于人的皮肤是一个不变的特征，而且胳膊、头的位置对于姿态估计有重要作用，因此充分利用皮肤特征是十分必要的。对于姿态估计，我们只关心胳膊、头的位置，因此本文用位置、面积信息来描述皮肤特征。首先，需要判断每个像素属于皮肤的概率，为了简化问题，本文假定皮肤颜色在YCbCr空间服从高斯分布，均值和方差均为手工给出。由于人们往往是穿着长裤，因此只能检测到头和左右臂这三个部分，而在穿长袖衣服时则只能检测到头和左右手。因此本文只选取概率最大的三个区域\footnote{只考虑ROI中的上半部分。有时候会小于三个区域，因为手和头部相连。}，分别认为是头、左臂和右臂。按面积由大到小排序，每一个区域用$\mathbf{r}=(x,y,s)$表示，$(x,y)$为区域的重心坐标，$s$为区域面积。检测结果见图\ref{fig:skin}。
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{原图}{\includegraphics[width=0.3\textwidth]{skin}\hspace{1cm}}
+  \subcaptionbox{原图}{\includegraphics[width=0.3\textwidth]{skin}}\hspace{1cm}
   \subcaptionbox{皮肤检测}{\includegraphics[width=0.3\textwidth]{skinbw}}
   \caption{皮肤检测}\label{fig:skin}
 \end{figure}

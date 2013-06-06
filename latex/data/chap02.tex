@@ -2,13 +2,13 @@
 
 
 \chapter{构建三维人体姿态数据库}
-由于人体姿态估计算法大部分为监督学习，因此研究者制作了很多用于训练和测试的数据库，这些数据库有些是从互联网、电影中获得的图片，并人工标记出骨架作为真值，有些是通过标记点或传感器等手段在拍摄影像的同时记录人体姿态的真值。表\ref{tab:benchmark}整理了目前常用的人体数据库，本文采用了HumanEva-I~\cite{sigal2006humaneva}数据库，将在\ref{sec:HumanEva}节介绍。
+由于人体姿态估计算法大部分为监督学习，因此研究者制作了很多用于训练和测试的数据库，这些数据库有些是从互联网、电影中获得的图片，并人工标记出骨架作为ground-truth，有些是通过标记点或传感器等手段在拍摄影像的同时记录人体姿态的ground-truth。表\ref{tab:benchmark}整理了目前常用的人体数据库，本文采用了HumanEva-I~\cite{sigal2006humaneva}数据库，将在\ref{sec:HumanEva}节介绍。
 
 \begin{table}[htbp]
   \centering
   \renewcommand{\arraystretch}{1.5}
   \begin{minipage}[t]{\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
-  \caption{姿态估计数据库汇总}
+  \caption{常用姿态估计数据库汇总}
   \label{tab:benchmark}
     \begin{tabular}{c|p{7em}<{\centering}cp{6em}<{\centering}cp{5em}<{\centering}p{3em}<{\centering}}
       \toprule[1.5pt]
@@ -32,7 +32,7 @@
 \label{sec:HumanEva}
 由于本文所做工作为人体三维姿态估计，不仅需要多个视角的视频数据，还需要对人物进行运动捕捉，记录关节点的位置，这项工作十分繁琐，由于经历和时间有限，也为了能和已有算法进行更好对比，最后选择了HumanEva数据库作为训练和测试的依据。
 \subsection{数据来源}
-尽管近年来姿态估计的算法百花齐放，但是由于基于不同的数据库，度量标准也有所差别，而且很多数据只是二维图片和骨架，缺少三维骨架信息，因此算法能利用的数据库十分有限，且不同算法之间很难比较，为了解决如上问题，美国布朗大学于2006年在本田研究所和英特尔公司的支持下设计制作了HumanEva数据库。该数据库用多台相机同步记录了多视点的人体动作视频，并用运动捕捉的方法记录了三维姿态信息，同时各相机也进行了标定，因此也可以计算得到二维姿态信息，在给出数据本身的同时，项目组还为姿态估计领域的研究者提供了一个简单的示例程序，演示了如何读取数据库，此外项目组还给出了一套计算误差的标准和网络提交平台，供研究者上传自己的算法结果，与他人结果进行对比。因此，该数据库的出现，不仅让研究者有了易用的大量数据，而且促进了该领域的交流与发展。
+尽管近年来姿态估计的算法百花齐放，但是由于不同算法基于不同的数据库，度量标准也有所差别，而且很多数据只是二维图片和骨架，缺少三维骨架信息，因此算法能利用的数据库十分有限，且不同算法之间很难比较，为了解决如上问题，美国布朗大学于2006年在本田研究所和英特尔公司的支持下设计制作了HumanEva数据库。该数据库用多台相机同步记录了多视点的人体动作视频，并用运动捕捉的方法记录了三维姿态信息，同时各相机也进行了标定，因此也可以计算得到二维姿态信息，在给出数据本身的同时，项目组还为姿态估计领域的研究者提供了一个简单的示例程序，演示了如何读取数据库，此外项目组还给出了一套计算误差的标准和网络提交平台，供研究者上传自己的算法结果，与他人结果进行对比。因此，该数据库的出现，不仅让研究者有了易用的大量数据，而且促进了该领域的交流与发展。
 
 \subsection{数据统计}
 HumanEva数据库一共包含两部分，分别为HumanEva-I和HumanEva-II，I代表数据制作的批次，两者的区别见表~\ref{tab:I-II}。本文采用的是HumanEva-I，用七台同步相机以每秒60帧的速度记录了四位演员分别表现的六种动作，共计13.5G视频资料，具体数据详见表\ref{tab:totalframes}，相机的摆放位置参照图\ref{fig:camera}，图\ref{fig:demo} 展示了数据库的样例。
@@ -77,14 +77,14 @@ HumanEva数据库一共包含两部分，分别为HumanEva-I和HumanEva-II，I�
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{S1}{\includegraphics[width=0.4\textwidth]{S1}\hspace{1cm}}
+  \subcaptionbox{S1}{\includegraphics[width=0.4\textwidth]{S1}}\hspace{.5cm}
   \subcaptionbox{S2}{\includegraphics[width=0.4\textwidth]{S2}}\\
-  \subcaptionbox{S3}{\includegraphics[width=0.4\textwidth]{S3}\hspace{1cm}}
+  \subcaptionbox{S3}{\includegraphics[width=0.4\textwidth]{S3}}\hspace{.5cm}
   \subcaptionbox{S4}{\includegraphics[width=0.4\textwidth]{S4}}
   \caption{HumanEva-I样例}\label{fig:demo}
 \end{figure}
 
-然而，数据库只对部分视频资料给出了运动姿态的真值，四号演员的所有视频都只能用来测试，一到三号演员也有一半视频都没有真值。此外，由于运动捕捉系统本身的问题，并不是对所有视频帧都能给出正确的三维姿态，因此经过筛选后\cite{Poppe2007}\cite{bo2010twin}文章所使用的训练数据如表\ref{tab:poppe}所示。在本文中，训练使用的帧数比\cite{Poppe2007}\cite{bo2010twin}文章较多，具体见表\ref{tab:mydataset}。
+然而，数据库只对部分视频资料给出了运动姿态的ground-truth，四号演员的所有视频都只能用来测试，一到三号演员也有一半视频都没有ground-truth。此外，由于运动捕捉系统本身的问题，并不是对所有视频帧都能给出正确的三维姿态，因此经过筛选后\cite{Poppe2007}\cite{bo2010twin}文章所使用的训练数据如表\ref{tab:poppe}所示。在本文中，训练使用的帧数比\cite{Poppe2007}\cite{bo2010twin}文章较多，具体见表\ref{tab:mydataset}。
 
 \begin{table}[htbp]
   \centering
@@ -135,8 +135,8 @@ HumanEva数据库一共包含两部分，分别为HumanEva-I和HumanEva-II，I�
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{}{\includegraphics[height=6cm]{3D_1}\hspace{1cm}}
-  \subcaptionbox{}{\includegraphics[height=6cm]{3D_2}\hspace{1cm}}
+  \subcaptionbox{}{\includegraphics[height=6cm]{3D_1}}\hspace{1cm}
+  \subcaptionbox{}{\includegraphics[height=6cm]{3D_2}}\hspace{1cm}
   \subcaptionbox{}{\includegraphics[height=6cm]{3D_3}}
   \caption{三维骨架表示}\label{fig:3Ddemo}
 \end{figure}

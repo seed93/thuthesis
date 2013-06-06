@@ -108,6 +108,9 @@
  L(\textbf{x}) &= K_X\left(\textbf{x},\textbf{x}\right)-2\left(\textbf{K}_X^x\right)^\top \textbf{K}_R^{-1} \textbf{K}_R^r \notag\\
                &- \left[K_R(\textbf{r},\textbf{r}) - \left(\textbf{K}_R^r\right)^\top \textbf{K}_R^{-1} \textbf{K}_R^r\right] \log\left[K_X(\textbf{x},\textbf{x}) - \left(\textbf{K}_X^x\right)^\top \textbf{K}_X^{-1} \textbf{K}_X^x\right] \label{eqn:TPGopt}
  \end{align}
- 
+
 通过求取梯度，令梯度为0，即可求得最优解。
-    
+
+\section{TGPKNN}
+
+由于TGP方法需要求$N\times N$矩阵的逆，当$N$很大时复杂度会很高，因此需要做一定的近似来降低复杂度，在这里考虑用KNN（$k$ nearest neighbors）方法先在$N$个数据中选择$k$个和待预测数据最接近的，然后再用TGP来实现。
