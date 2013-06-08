@@ -3,7 +3,7 @@
 \chapter{基于双高斯过程的姿态估计算法}
 
 \section{概述}
-由第\ref{sec:feature}节和第\ref{sec:skeleton}节可知，本文研究问题的输入输出已经刻画成两个一维向量，记输入向量（特征向量）为$\mathbf{R}$,，输出向量（骨架向量）为$\mathbf{X}$，则$\mathbf{X}=\textrm{F}(\mathbf{R})$，可以归结为一个多输出多元回归问题。显然，输出向量的每个元素之间是有关联的，用若干简单的回归方法（如线性回归、SVM等方法）独立预测各元素是不合理的。此外，我们知道相似的特征应该表示相似的人体骨架，因此，自然想到了 KNN（\emph{k} nearest neighbor regression）算法，但该算法效果并不理想，因此本文采用了一种能更好描述向量之间相关性的算法\pozhehao 双高斯过程回归（Twin Gaussian Process Regression，以下简称TGP）。在介绍该算法前，首先有必要介绍其前身和基础\pozhehao 高斯过程回归（Gaussian Process Regression，以下简称GPR）。
+由第\ref{sec:feature}节和第\ref{sec:skeleton}节可知，本文研究问题的输入输出已经刻画成两个一维向量，记输入向量（特征向量）为$\mathbf{R}$,，输出向量（骨架向量）为$\mathbf{X}$，则$\mathbf{X}=\textrm{F}(\mathbf{R})$，可以归结为一个多输出多元回归问题。显然，输出向量的每个元素之间是有关联的，用若干简单的回归方法（如线性回归、SVM（Support Vector Machine）等方法）独立预测各元素是不合理的。此外，我们知道相似的特征应该表示相似的人体骨架，因此，自然想到了KNN（\emph{k} nearest neighbor regression）算法，但该算法效果并不理想，因此本文采用了一种能更好描述向量之间相关性的算法\pozhehao 双高斯过程回归（Twin Gaussian Process Regression，以下简称TGP）。在介绍该算法前，首先有必要介绍其前身和基础\pozhehao 高斯过程回归（Gaussian Process Regression，以下简称GPR）。
 
 \section{高斯过程回归}
 高斯过程回归是基于贝叶斯理论和统计学习理论发展起来的一种机器学习方法, 对于高维数、小样本和非线性等复杂回归问题行之有效。
@@ -39,7 +39,7 @@
 
 以上阐述了如何利用GPR进行预测，关于GPR的参数如何学习计算，可以采用共轭梯度法、牛顿法等优化方法求得参数的最优解，本文不再详述。
 
-由于GPR只关心单个输出的预测，没有考虑每个输出之间的关系，而且对于从二维平面恢复三维姿态这样一个多解问题GPR显得无能为力，因此本文采用了双高斯过程回归，将在\ref{sec:TGP} 节介绍。
+由于GPR只关心单个输出的预测，没有考虑每个输出之间的关系，而且对于从二维平面恢复三维姿态这样一个多解问题GPR显得无能为力，因此本文采用了双高斯过程回归，将在\ref{sec:TGP}节介绍。
 
 \section{双高斯过程回归}
 \label{sec:TGP}
@@ -59,7 +59,7 @@
 于是$\begin{bmatrix} {\left(\mathbf{X}^{(d)}\right)}^\top \\ \mathbf{x}^{(d)} \end{bmatrix}$服从$\mathcal{N}_X$和$\mathcal{N}_R$两个正态分布。我们希望这两个分布尽量一致，$\mathcal{N}_X$ 的参数是需要估计的，通过优化调整$\mathbf{x}^{(d)}$使两个分布尽量接近。
 
 \subsection{KL散度}
-为了刻画相同事件空间里的两个概率分布的相似度，在此引入KL散度（Kullback-Leibler Divergence），其物理意义是：在相同事件空间里，概率分布$P(x)$ 的事件空间，若用概率分布$Q(x)$ 编码时，平均每个基本事件（符号）编码长度增加了多少比特\footnote{url:\url{http://en.wikipedia.org/wiki/Kullback-Leibler_divergence}}。 计算公式为：
+为了刻画相同事件空间里的两个概率分布的相似度，在此引入KL散度（Kullback-Leibler Divergence），其物理意义是：在相同事件空间里，概率分布$P(x)$的事件空间，若用概率分布$Q(x)$编码时，平均每个基本事件（符号）编码长度增加了多少比特\footnote{url:\url{http://en.wikipedia.org/wiki/Kullback-Leibler_divergence}}。 计算公式为：
 \begin{equation}
   D(P||Q)=\sum P(x)\log \frac{P(x)}{Q(x)}
 \end{equation}
