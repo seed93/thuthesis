@@ -92,7 +92,7 @@
     \end{tabular}
 \end{table}
 此外，本文也用TGPKNN进行了测试，其中用了800个邻居，从表\ref{tab:TGPKNNresult}可以看出，本文的结果和原文~\cite{bo2010twin} 有较大差距，原因分析参见第\ref{sec:analysis}节。原文并没有给出Subject4的结果，本文给出的Subject4的结果误差很大。
-%改结果
+
 \begin{table}[H]
   \centering
   \caption{TGPKNN测试结果}
@@ -103,7 +103,7 @@
       & 本文 & 原文 & 本文 & 原文 & 本文 & 原文 & 本文 \\\midrule[1pt]
       走路 & 53.4& 26.6& 73.2& 25.2& 172& 31.0& 282.7\\
       慢跑 & 70.5& 32.2& 219.5& 26.9& 117.1& 32.4& 274.2\\
-      投掷 & -& -& 128.6& 4.05& 143.3& 74.1& 242.5\\
+      投掷 & -& -& 128.6& 40.5& 143.3& 74.1& 242.5\\
       挥手 & 36.1& 19.2& 176.1& 50.2& 68.8& 50.9& 254.9\\
       拳击 & 84& 57.7& 201.3& 72.5& 198.0& 75.5& 255.2\\
       混合 & -& -& 184.2& 51.9& 171.9& 64.6& 282.1\\
@@ -200,5 +200,5 @@
   \subcaptionbox{}{\includegraphics[width=0.2\textwidth]{S2Jog1}}\hspace{.5cm}
   \subcaptionbox{}{\includegraphics[width=0.2\textwidth]{S2Jog2}}\hspace{.5cm}
   \subcaptionbox{}{\includegraphics[width=0.2\textwidth]{S2Jog3}}
-  \caption[较大误差示意1]{这一帧来自Subject2做慢跑动作，系统给出误差为229.3mm，但我们从图中可以看出该三维姿态十分准确，不应该有如此大的误差}\label{fig:bigerr1}
-\end{figure}
+  \caption[较大误差示意]{这一帧来自Subject2做慢跑动作，系统给出误差为229.3mm，但我们从图中可以看出该三维姿态十分准确，不应该有如此大的误差}\label{fig:bigerr1}
+\end{figure} 

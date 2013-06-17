@@ -27,8 +27,8 @@
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{}{\includegraphics[height=5.5cm]{bkfar}}\hspace{1cm}
-  \subcaptionbox{}{\includegraphics[height=5.5cm]{bkfarcut}}
+  \subcaptionbox{处理前}{\includegraphics[height=5.5cm]{bkfar}}\hspace{1cm}
+  \subcaptionbox{去掉偏远背景}{\includegraphics[height=5.5cm]{bkfarcut}}
   \caption{HumanEva背景分割2}\label{fig:bkfar}
 \end{figure}
 
@@ -120,7 +120,7 @@ HOG特征的提取方法主要步骤如下：
     \STATE $grad_x \leftarrow$ CalGrad$(image,hx)$;
     \STATE $grad_y \leftarrow$ CalGrad$(image,hy)$;
     \STATE $angle \leftarrow$ GetAngle$(grad_x,grad_y)$;\comment 计算梯度方向
-    \STATE $magnit \leftarrow \sqrt(grad_yu^2+grad_xr^2)$;\comment 计算梯度大小
+    \STATE $magnit \leftarrow \sqrt{(grad_yu^2+grad_xr^2)}$;\comment 计算梯度大小
     \STATE \comment 计算直方图
     \FOR{$i=1$ to $Cell\_Num\_x\times Cell\_Num\_y$}
         \FOR{$j=0$ to 180, interval=20}
@@ -132,7 +132,7 @@ HOG特征的提取方法主要步骤如下：
   \end{algorithmic}
 \end{algorithm}
 
-此处需要强调一下，Poppe等人对于区域数量的选取是$5\times 6=30$，由于每张图片人物大小不一、长宽比例不固定，因此每个元胞的长宽比也不固定，这会导致一些问题，比如在不同长宽比的图片中，头部在细长的图片中会出现在多个元胞中，而较宽的图片中则只有一个区域有头部，图片本身的比例信息已经丢失，见图\ref{fig:broadthin}。为了解决这个问题，本文在求取HOG特征之前先将图片填充到3:2 的比例（见图）\ref{fig:broadthin2}，这样求取的特征就不会变形，虽然有较多区域是无用信息，占用了维数，但是经过测试，这并不会增加额外的存储占用，因为数据本身是稀疏的。
+此处需要强调一下，Poppe等人对于区域数量的选取是$5\times 6=30$，由于每张图片人物大小不一、长宽比例不固定，因此每个元胞的长宽比也不固定，这会导致一些问题，比如在不同长宽比的图片中，头部在细长的图片中会出现在多个元胞中，而较宽的图片中则只有一个区域有头部，图片本身的比例信息已经丢失，见图\ref{fig:broadthin}。为了解决这个问题，本文在求取HOG特征之前先将图片填充到3:2 的比例（见图\ref{fig:broadthin2}），这样求取的特征就不会变形，虽然有较多区域是无用信息，占用了维数，但是经过测试，这并不会增加额外的存储占用，因为数据本身是稀疏的。
 \begin{figure}[htbp]
   \centering
   \subcaptionbox{较宽图片}{\includegraphics[height=5.5cm]{broad}}\hspace{.5cm}
@@ -179,4 +179,4 @@ HOG特征的提取方法主要步骤如下：
 
 \section{特征表示}
 \label{sec:feature}
-HOG特征有$6\times 9=36$个元胞，每个子区域有9维直方图，因此共计$36\times 9=486$维。皮肤特征有3个区域，每个区域$(x,y,s)$三维信息，共计$3\times 3=9$维。两种特征相连共计$486+9=495$维。如果用到三个视角图片，则会有$495\times 3=1485$维。
+HOG特征有$6\times 9=54$个元胞，每个子区域有9维直方图，因此共计$54\times 9=486$维。皮肤特征有3个区域，每个区域$(x,y,s)$三维信息，共计$3\times 3=9$维。两种特征相连共计$486+9=495$维。如果用到三个视角图片，则会有$495\times 3=1485$维。

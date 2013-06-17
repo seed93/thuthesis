@@ -23,10 +23,10 @@
 \contentsline {section}{\numberline {3.1}图片预处理}{11}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}计算背景数据}{11}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}局部优化}{12}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}HOG特征}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}概述}{15}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}HOG特征}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}概述}{16}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}计算HOG描述子}{16}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}皮肤特征}{18}{section.3.3}
+\contentsline {section}{\numberline {3.3}皮肤特征}{20}{section.3.3}
 \contentsline {section}{\numberline {3.4}特征表示}{20}{section.3.4}
 \contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章}基于双高斯过程的姿态估计算法}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}概述}{21}{section.4.1}

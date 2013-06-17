@@ -11,9 +11,9 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces HumanEva背景分割4\relax }}{14}{figure.caption.29}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces 背景分割对比\relax }}{15}{figure.caption.30}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces 背景分割错误\relax }}{15}{figure.caption.31}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces 图片比例影响示意\relax }}{17}{figure.caption.32}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 图片比例影响示意\relax }}{18}{figure.caption.32}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces 图片固定比例示意\relax }}{18}{figure.caption.33}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces HOG特征子区域直方图表示\relax }}{18}{figure.caption.34}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces HOG特征子区域直方图表示\relax }}{19}{figure.caption.34}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces HOG特征\relax }}{19}{figure.caption.35}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces 皮肤检测\relax }}{20}{figure.caption.36}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces 单个视频逐帧误差}}{28}{figure.caption.44}
@@ -21,5 +21,5 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces 其他数据测试结果对比1\relax }}{30}{figure.caption.46}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces 其他数据测试示意2\relax }}{30}{figure.caption.47}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces 其他数据测试结果对比2\relax }}{31}{figure.caption.48}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 较大误差示意1}}{32}{figure.caption.50}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 较大误差示意}}{32}{figure.caption.50}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces 错误的ground-truth\relax }}{33}{figure.caption.52}

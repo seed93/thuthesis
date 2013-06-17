@@ -78,14 +78,14 @@
 \ckeywords{三维， 姿态， 估计}
 
 \begin{eabstract}
-Human pose estimation has been one of the key problems in computer vision. Human pose estimation has broad application prospects and significant application value. Today's research mostly focuses on estimation 2D human pose from monucular camera, which has many problems such as low accuracy, unable to reconstruct 3D human pose. This thesis aims at estimating 3D human pose from images taken from 3 cameras of different views.
+Human pose estimation has been one of the key problems in computer vision, which has broad application prospects and significant application value. Today's research mostly focuses on estimation 2D human pose from monucular camera, which has many problems such as low accuracy, unable to reconstruct 3D human pose. This thesis aims at estimating 3D human pose from images taken from 3 cameras of different views.
 The innovation points of this thesis are:
   \begin{itemize}
     \item proposes an effective algorithm of background segmentation. Original segmentation algorithm generates a lot of holes and noises, which will bring great noises into HOG descriptor. The algorithm of this thesis can cut the object from background completely
     \item implements an HOG descriptor. Original HOG descriptor changes the size of each cell according to the person in the image. Differently, this thesis maitain the original proportions of the image by a fixed aspect ratio.
     \item proposes a new effective feature that describes skin information
   \end{itemize}
-  
+
   In summary, this thesis implements a new description of image features, which are more suitable for identifying human pose that is not included in the dataset and enhance robustness.
 \end{eabstract}
 
